@@ -27,10 +27,13 @@ class hangman:
             self.lives -= 1
         
                 
-
-
- #   def start(self):
-
+    def start_game(self):
+        while self.lives > 0:
+            self.play()
+        self.game_over()
+    
+    def game_over(self):
+        print("GAME OVER")
 
 
 hang = hangman()
@@ -40,6 +43,8 @@ print(hang.wrongly_guessed_letters)
 hang.play()
 print(hang.correctly_guessed_letters)
 print(hang.wrongly_guessed_letters)
+print(hang.turn_count)
+print(hang.lives)
 
 
 
