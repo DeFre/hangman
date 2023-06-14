@@ -53,7 +53,7 @@ class hangman:
         print("*********")
         print("GAME OVER")
         print("*********")
-        print("The word you were looking for was ", self.chosen_word)
+        print("The word you were looking for was ", " ".join(self.chosen_word).upper())
         return
 
     def well_played(self):
