@@ -17,6 +17,9 @@ class hangman:
         self.error_count = 0        #the number of errors made by the player
 
     def play(self):
+        """
+        This method manages each turn: asks for an input, checks the word and adds new letters, takes lives where necessary
+        """
         guess = input("Please type a letter:").lower()
         self.turn_count += 1
         if guess in self.word_to_find:
