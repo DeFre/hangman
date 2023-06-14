@@ -33,12 +33,12 @@ class hangman:
                 
     def start_game(self):
         """initiates the game"""
-        print("Can you guess this word? ", self.correctly_guessed_letters)
+        print("Can you guess this word? ", " ".join(self.correctly_guessed_letters))
 
         while self.lives > 0:
             if self.correctly_guessed_letters != self.word_to_find:    
                 self.play()
-                print(self.correctly_guessed_letters)
+                print(" ".join(self.correctly_guessed_letters).upper())
                 print("It's not one of these letters:", self.wrongly_guessed_letters)
                 print("You have been playing for ", self.turn_count, " turns.")
                 print("You have ",self.lives, " lives left")
