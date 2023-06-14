@@ -1,3 +1,3 @@
 import utils.game as game
-hang = game.Hangman()
+hang = game.hangman()
 hang.start_game()
