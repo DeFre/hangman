@@ -30,13 +30,16 @@ class hangman:
                 
     def start_game(self):
         """initiates the game"""
-        while self.lives > 0:
-            self.play()
-            print(hang.correctly_guessed_letters)
-            print("It's not one of these letters:",hang.wrongly_guessed_letters)
-            print("You have been playing for ", hang.turn_count, " turns.")
-            print("You have ",hang.lives, " left")
-        self.game_over()
+        print("Can you guess this word? ",hang.correctly_guessed_letters)
+        while self.correctly_guessed_letters != self.word_to_find:
+            while self.lives > 0:
+                self.play()
+                print(self.correctly_guessed_letters)
+                print("It's not one of these letters:",hang.wrongly_guessed_letters)
+                print("You have been playing for ", hang.turn_count, " turns.")
+                print("You have ",hang.lives, " lives left")
+            self.game_over()
+        self.well_played
     
     def game_over(self):
         """Displays GAME OVER and the word you were looking for"""
@@ -48,6 +51,7 @@ class hangman:
         print(hang.correctly_guessed_letters.upper())
         print("you made ", 5-lives, " mistakes, but you made it!")
         print("Well Played!")
+        break
 
 
 hang = hangman()
