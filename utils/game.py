@@ -1,24 +1,33 @@
+import random
 
 class hangman:
     """
     Class that defines everything we need for our game
     """
+    pass
 
     def __init__(self):
-        """when the game starts, it picks a word and sets the number of lives to 5"""
-        self
+        self.possible_words = ['becode', 'learning', 'mathematics', 'sessions'] #the list of words the game can choose from
+        self.word_to_find = list(random.choice(self.possible_words))  #a list containing all the letters of the word which need to be guessed as strings
+        self.lives = 5 #the number of lives a player still has left
+        self.correctly_guessed_letters =  ["_" for i in range (len(self.word_to_find))] #a list of strings where each element will be a letter guessed by the user. At the start, it should be equal to: `_ _ _ _ _`, with the same number of `_` as the length of the word to find.
+        self.wrongly_guessed_letters =  [] #a list of strings where each element will be a letter guessed by the user that is not in the `word_to_find`
+        self.turn_count = 0 #the number of turns played by the player represented as an `int`.
+        self.error_count = 0 #the number of errors made by the player
+
+"""    def play(self):
+        guess = input("Please type a letter:")
+        if guess in self.word_to_find:"""
+
+
+ #   def start(self):
+
+
+
+game = hangman()
+print(game.word_to_find)
+print(game.correctly_guessed_letters)
+
+
+
     
-    def possible_words(self):
-        """Contains the list of words the game can choose from"""
-
-    def word_to_find(self): 
-        """a list containing all the letters of the word which need to be guessed as strings"""
-
-    def lives(self):
-        """the number of lives a player still has left"""
-        self.lives = 5
-
-    def correctly_guessed_letters(self):
-        """a list of strings where each element will be a letter guessed by the user. At the start, it should be equal to: `_ _ _ _ _`, with the same number of `_` as the length of the word to find. """
-
-
