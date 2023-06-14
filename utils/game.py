@@ -50,7 +50,9 @@ class hangman:
     
     def game_over(self):
         """Displays GAME OVER and the word you were looking for"""
+        print("*********")
         print("GAME OVER")
+        print("*********")
         print("The word you were looking for was ", self.chosen_word)
         return
 
@@ -58,6 +60,8 @@ class hangman:
         """Displays GAME OVER and the word you were looking for"""
         print(self.correctly_guessed_letters)
         print("you made ", 5-self.lives, " mistakes, but you made it!")
+        print("!!!!!!!!!!!!")
         print("Well Played!")
+        print("!!!!!!!!!!!!")
         
 
