@@ -34,24 +34,29 @@ class hangman:
     def start_game(self):
         """initiates the game"""
         print("Can you guess this word? ", self.correctly_guessed_letters)
-        while self.correctly_guessed_letters != self.word_to_find:
-            while self.lives > 0:
+
+        while self.lives > 0:
+            if self.correctly_guessed_letters != self.word_to_find:    
                 self.play()
                 print(self.correctly_guessed_letters)
                 print("It's not one of these letters:", self.wrongly_guessed_letters)
                 print("You have been playing for ", self.turn_count, " turns.")
                 print("You have ",self.lives, " lives left")
-            self.game_over()
-        self.well_played()
+            else:
+                self.well_played()
+                return
+        self.game_over()
+        
     
     def game_over(self):
         """Displays GAME OVER and the word you were looking for"""
         print("GAME OVER")
-        print("The word you were looking for was ", self.chosen_word.upper())
+        print("The word you were looking for was ", self.chosen_word)
+        return
 
     def well_played(self):
         """Displays GAME OVER and the word you were looking for"""
-        print(self.correctly_guessed_letters.upper())
+        print(self.correctly_guessed_letters)
         print("you made ", 5-self.lives, " mistakes, but you made it!")
         print("Well Played!")
         
