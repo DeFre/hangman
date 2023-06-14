@@ -15,18 +15,24 @@ class hangman:
         self.turn_count = 0 #the number of turns played by the player represented as an `int`.
         self.error_count = 0 #the number of errors made by the player
 
-"""    def play(self):
+    def play(self):
         guess = input("Please type a letter:")
-        if guess in self.word_to_find:"""
+        if guess in self.word_to_find:
+            indices = [i for i, x in enumerate(self.word_to_find) if x == guess]
+            for i in range(len(indices)):
+                self.correctly_guessed_letters[indices[i]] = guess
+                
 
 
  #   def start(self):
 
 
 
-game = hangman()
-print(game.word_to_find)
-print(game.correctly_guessed_letters)
+hang = hangman()
+print(hang.word_to_find)
+print(hang.correctly_guessed_letters)
+hang.play()
+print(hang.correctly_guessed_letters)
 
 
 
