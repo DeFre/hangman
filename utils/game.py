@@ -17,10 +17,15 @@ class hangman:
 
     def play(self):
         guess = input("Please type a letter:").lower()
+        self.turn_count += 1
         if guess in self.word_to_find:
             indices = [i for i, x in enumerate(self.word_to_find) if x == guess]
             for i in range(len(indices)):
                 self.correctly_guessed_letters[indices[i]] = guess
+        else:
+            self.wrongly_guessed_letters.append(guess)
+            self.lives -= 1
+        
                 
 
 
@@ -31,8 +36,10 @@ class hangman:
 hang = hangman()
 print(hang.word_to_find)
 print(hang.correctly_guessed_letters)
+print(hang.wrongly_guessed_letters)
 hang.play()
 print(hang.correctly_guessed_letters)
+print(hang.wrongly_guessed_letters)
 
 
 
