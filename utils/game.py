@@ -7,13 +7,14 @@ class hangman:
     pass
 
     def __init__(self):
-        self.possible_words = ['becode', 'learning', 'mathematics', 'sessions'] #the list of words the game can choose from
-        self.word_to_find = list(random.choice(self.possible_words))  #a list containing all the letters of the word which need to be guessed as strings
-        self.lives = 5 #the number of lives a player still has left
-        self.correctly_guessed_letters =  ["_" for i in range (len(self.word_to_find))] #a list of strings where each element will be a letter guessed by the user. At the start, it should be equal to: `_ _ _ _ _`, with the same number of `_` as the length of the word to find.
-        self.wrongly_guessed_letters =  [] #a list of strings where each element will be a letter guessed by the user that is not in the `word_to_find`
-        self.turn_count = 0 #the number of turns played by the player represented as an `int`.
-        self.error_count = 0 #the number of errors made by the player
+        self.possible_words = ['becode', 'learning', 'mathematics', 'sessions']         #the list of words the game can choose from
+        self.chosen_word = random.choice(self.possible_words) #so that it can be displayed in game_over
+        self.word_to_find = list(self.chosen_word)        #a list containing all the letters of the word which need to be guessed as strings
+        self.lives = 5      #the number of lives a player still has left
+        self.correctly_guessed_letters =  ["_" for i in range (len(self.word_to_find))]         #a list of strings where each element will be a letter guessed by the user. At the start, it should be equal to: `_ _ _ _ _`, with the same number of `_` as the length of the word to find.
+        self.wrongly_guessed_letters =  []      #a list of strings where each element will be a letter guessed by the user that is not in the `word_to_find`
+        self.turn_count = 0         #the number of turns played by the player represented as an `int`.
+        self.error_count = 0        #the number of errors made by the player
 
     def play(self):
         guess = input("Please type a letter:").lower()
@@ -28,24 +29,30 @@ class hangman:
         
                 
     def start_game(self):
+        """initiates the game"""
         while self.lives > 0:
             self.play()
+            print(hang.correctly_guessed_letters)
+            print("It's not one of these letters:",hang.wrongly_guessed_letters)
+            print("You have been playing for ", hang.turn_count, " turns.")
+            print("You have ",hang.lives, " left")
         self.game_over()
     
     def game_over(self):
+        """Displays GAME OVER and the word you were looking for"""
         print("GAME OVER")
+        print("The word you were looking for was ", self.chosen_word.upper())
+
+    def well_played(self):
+        """Displays GAME OVER and the word you were looking for"""
+        print(hang.correctly_guessed_letters.upper())
+        print("you made ", 5-lives, " mistakes, but you made it!")
+        print("Well Played!")
 
 
 hang = hangman()
-print(hang.word_to_find)
-print(hang.correctly_guessed_letters)
-print(hang.wrongly_guessed_letters)
-hang.play()
+hang.start_game()
 print(hang.correctly_guessed_letters)
 print(hang.wrongly_guessed_letters)
 print(hang.turn_count)
 print(hang.lives)
-
-
-
-    
