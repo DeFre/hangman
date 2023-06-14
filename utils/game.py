@@ -53,10 +53,3 @@ class hangman:
         print("Well Played!")
         break
 
-
-hang = hangman()
-hang.start_game()
-print(hang.correctly_guessed_letters)
-print(hang.wrongly_guessed_letters)
-print(hang.turn_count)
-print(hang.lives)
