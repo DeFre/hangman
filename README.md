@@ -2,7 +2,6 @@
 
 **This project is a terminal version of the game Hangman in Python. I created it as part of my BeCode AI Bootcamp training.**
 
-*This is very much still a work in progress*
 
 ## How to play this game
 1. Clone the repo
@@ -15,5 +14,6 @@ This project was written in Python 3.10
 ## Timeline
 This project was created in one day on 14/06/2023.
 
+## Enjoy!
 
 Created by [DeFre](https://github.com/DeFre)
