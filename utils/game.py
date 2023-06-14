@@ -16,7 +16,7 @@ class hangman:
         self.error_count = 0 #the number of errors made by the player
 
     def play(self):
-        guess = input("Please type a letter:")
+        guess = input("Please type a letter:").lower()
         if guess in self.word_to_find:
             indices = [i for i, x in enumerate(self.word_to_find) if x == guess]
             for i in range(len(indices)):
