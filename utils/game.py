@@ -20,7 +20,7 @@ class hangman:
         """
         This method manages each turn: asks for an input, checks the word and adds new letters, takes lives where necessary
         """
-        guess = input("Please type a letter:").lower()
+        guess = input("\nPlease type a letter:").lower()
         self.turn_count += 1
         if guess in self.word_to_find:
             indices = [i for i, x in enumerate(self.word_to_find) if x == guess]
@@ -50,18 +50,28 @@ class hangman:
     
     def game_over(self):
         """Displays GAME OVER and the word you were looking for"""
-        print("*********")
-        print("GAME OVER")
-        print("*********")
+        print(("""\
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+========= 
+"""))
+        print("*********\nGAME OVER\n*********")
         print("The word you were looking for was ", " ".join(self.chosen_word).upper())
         return
 
     def well_played(self):
         """Displays GAME OVER and the word you were looking for"""
         print(" ".join(self.correctly_guessed_letters).upper())
-        print("you made ", 5-self.lives, " mistakes, but you made it!")
-        print("!!!!!!!!!!!!")
-        print("Well Played!")
-        print("!!!!!!!!!!!!")
+        if 5-self.lives == 0:
+            print("you made no mistakes at all! AWESOME!")
+        elif 5-self.lives == 1:
+            print("you made 1 mistake, but you made it!")
+        else:    
+            print("you made ", 5-self.lives, " mistakes, but you made it!")
+        print("!!!!!!!!!!!!\nWell Played!\n!!!!!!!!!!!!")
         
 
