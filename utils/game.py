@@ -65,13 +65,13 @@ class hangman:
 
     def well_played(self):
         """Displays GAME OVER and the word you were looking for"""
-        print(" ".join(self.correctly_guessed_letters).upper())
+        print("\n"," ".join(self.correctly_guessed_letters).upper(),"\n")
         if 5-self.lives == 0:
             print("you made no mistakes at all! AWESOME!")
         elif 5-self.lives == 1:
             print("you made 1 mistake, but you made it!")
         else:    
             print("you made ", 5-self.lives, " mistakes, but you made it!")
-        print("!!!!!!!!!!!!\nWell Played!\n!!!!!!!!!!!!")
+        print("\n!!!!!!!!!!!!\nWell Played!\n!!!!!!!!!!!!")
         
 
